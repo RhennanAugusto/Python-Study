@@ -15,6 +15,7 @@ while True:
          opcao2 = int(input("Qual item voce deseja excluir da lista:"))
          if opcao2 < len(lista):
                del lista[opcao2]
+               print(f'Você deletou da lista: {nome}')
          else:
                print('Item não existente')
        
