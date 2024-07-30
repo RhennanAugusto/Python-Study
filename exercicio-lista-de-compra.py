@@ -1,14 +1,20 @@
+
 lista = []
+
 while True:
-   opcao= input("Selecione uma opção\n[i]nserir [a]pagar [l]istar: ")
+   opcao= input("\nSelecione uma opção\n[i]nserir [a]pagar [l]istar: ")
     
    if opcao == 'inserir':
         produto = input('Produto:')
         lista.append(produto)
 
    elif opcao == 'listar':
-       for indice,nome in enumerate(lista): #aqui posso acessar os valores direto fora da tupla
-        print(indice,nome)
+       if len(lista) == 0:
+           print("Não existe itens para serem listados")
+       else:
+        for indice,nome in enumerate(lista): #aqui posso acessar os valores direto fora da tupla
+            print(indice,nome)
+    
 
    elif opcao == 'apagar':
       try:
@@ -23,9 +29,12 @@ while True:
          print("Tipo de exceção" , type(e))
          print("Mensagem de erro : ", "Você não digitou um índice pertecente a lista")
 
+      
+
    
    elif opcao == 'sair':
        print('Programa finalizado com sucesso')
        break
+   
    else :
        print('Opção inválida')
